@@ -1,0 +1,6 @@
+#!/bin/bash
+
+VENV_PATH="/home/naked_on_the_bus/cj/cj_virtual_env"
+source "$VENV_PATH/bin/activate"
+python /home/naked_on_the_bus/cj/src/main.py
+deactivate
