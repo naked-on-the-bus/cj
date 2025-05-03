@@ -47,7 +47,7 @@ print(ascii_art+"\n")
 COLOR_GREEN  = '\033[92m' 
 COLOR_RED    = '\033[91m'    
 COLOR_YELLOW = '\033[93m'
-COLOR_RESET  = '\033[0m' # Reset to default color and style
+COLOR_RESET  = '\033[0m'
 
 # --- Configuration ---
 RESPONSE_DIRECTORY = "/var/tmp/ai_responces"
@@ -195,5 +195,5 @@ while True:
         print(f"{COLOR_RED}{COLOR_RESET}  An unexpected error occurred during AI interaction: {e}")
         # Continue the loop to allow the user to try again or quit
         pass
-
+os.system('clear')
 print(f"\nFinal conversation log saved to {FULL_LOG_PATH}")
