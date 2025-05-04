@@ -1,34 +1,74 @@
-# CJ - Command Line AI Assistant
+```bash
+   ##################        ############# 
+ ######################     ###############
+####                ####    ####       ####
+####                 ###    ####       ####
+####                 ###    ####       ####
+####       ##        ###    ####       ####
+####       ##        ###########       ####
+####       #####################       ####
+####       ##        #        ##       ####
+####       ##        #        ##       ####
+####       ##        #        ##       ####
+####                 #                 ####
+####                 #                 ####
+####                ###                ####
+ ######################################### 
+   ################## ##################   
+```
 
-CJ stands for [Carl Jonson](https://it.wikipedia.org/wiki/Carl_Johnson_(Grand_Theft_Auto)).
+`cj` stands for [Carl Jonson](https://it.wikipedia.org/wiki/Carl_Johnson_(Grand_Theft_Auto)).
 
 This is interactive command-line interface (CLI) tool to chat with Google's Generative AI models (like Gemini) directly from your Linux terminal.
 
-It maintains a conversation history within a session and logs the entire chat to a Markdown file. Responses are displayed using `glow` if available, otherwise printed directly.
+It maintains a conversation history within a session and logs the entire chat to a Markdown file. Responses are displayed using `glow` if available, otherwise printed directly, which sucks, so install glow :)
 
 ## Features
 
 *   Interactive chat session in the terminal.
 *   Uses Google's Gemini models via the `google-generativeai` library.
 *   Configurable API key and AI model selection via interactive menus.
-*   Saves configuration to `~/.config/cj/cj.ini`.
-*   Logs conversation history to `/var/tmp/cj/conversation_log.md`.
 *   Uses `glow` for pretty Markdown rendering in the terminal (optional).
 *   User-friendly installation script.
 
 ## Requirements
 
-*   **Linux Operating System**
-*   **Python 3** (tested with 3.8+, likely works with 3.7+)
-*   **pip** (Python package installer, usually comes with Python 3)
-*   **git** (for cloning the repository)
-*   **glow** (Optional, for better Markdown display): Install via your package manager (e.g., `sudo apt install glow`, `sudo dnf install glow`) or from [Glow Releases](https://github.com/charmbracelet/glow/releases).
+To set up the project, you will need the following installed on your system:
+
+* **Linux Operating System**
+* **Python 3** (tested with 3.8+, likely works with 3.7+)
+* **pip** (Python package installer, usually comes with Python 3)
+* **git** (for cloning the repository)
+* **glow** (Optional, for better Markdown display)
+
+Here are the commands to install these requirements on common Linux distributions:
+
+**For Debian-based distributions (like Ubuntu, Mint, Debian):**
+
+You can install the requirements using `apt`:
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pip git glow
+```
+
+**For Arch Linux:**
+
+You can install the requirements using `pacman`:
+
+```bash
+sudo pacman -S python python-pip git glow
+```
+
+**Manual Glow Installation (if not available via package manager):**
+
+If `glow` is not available in your distribution's repositories, you can download a binary release from the [Glow Releases page](https://github.com/charmbracelet/glow/releases) and place it in your system's PATH (e.g., `/usr/local/bin`).
 
 ## Installation
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/cj.git # Replace with your actual repo URL
+    git clone https://github.com/naked-on-the-bus/cj.git
     cd cj
     ```
 
@@ -38,11 +78,23 @@ It maintains a conversation history within a session and logs the entire chat to
     ```
 
 3.  **Ensure `~/.local/bin` is in your PATH:**
-    The installer script will check this. If it's not in your PATH, add the following line to your shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`):
+    Some Python tools install executables into `~/.local/bin`. For these to be runnable directly from your terminal, this directory needs to be in your PATH.
+
+    Display your current PATH with:
+
+    ```bash
+    echo $PATH
+    ```
+
+    Please examine the output to confirm if `~/.local/bin` is present in the colon-separated list of directories.
+
+    If `~/.local/bin` is **not** in your PATH, add the following line to your shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`, `~/.profile`):
+
     ```bash
     export PATH="$HOME/.local/bin:$PATH"
     ```
-    Then, either restart your terminal or run `source ~/.bashrc` (or the equivalent for your shell).
+
+    After thar open a new terminal. and you good to go.
 
 ## Configuration
 

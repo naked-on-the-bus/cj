@@ -1,0 +1,21 @@
+# Virtual environment
+cj_virtual_env/
+venv/
+*/venv/
+env/
+*/env/
+.env
+*./env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# My temporany run script
+src/cj
+
+# OS generated files
+.DS_Store
+Thumbs.db
