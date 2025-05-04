@@ -43,13 +43,14 @@ print(ascii_art)
 # --- Configuration ---
 api_key  = ""
 ai_model = ""
-response_directory      = "/var/tmp/ai_responces"
+response_directory      = "/var/tmp/cj"
 home_directory          = os.path.expanduser('~')
 configuration_directory = os.path.join(
     home_directory, '.config', 'cj')
-configuration_file      = os.path.join(configuration_directory, 'cj.ini')
-CONVERSATION_FILENAME   = "conversation_log.md"
-full_log_path = os.path.join(response_directory, CONVERSATION_FILENAME)
+configuration_file      = os.path.join(
+    configuration_directory, 'cj.ini')
+full_log_path = os.path.join(
+    response_directory, "conversation_log.md")
 model_options = (
     'gemini-2.5-flash-preview-04-17',
     'gemini-2.5-pro-preview-03-25',
