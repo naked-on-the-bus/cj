@@ -43,12 +43,13 @@ print(ascii_art)
 # --- Configuration ---
 api_key  = ""
 ai_model = ""
-response_directory      = "/var/tmp/cj"
 home_directory          = os.path.expanduser('~')
+response_directory      = os.path.join(
+    home_directory, '.config', 'tmp')
 configuration_directory = os.path.join(
     home_directory, '.config', 'cj')
 configuration_file      = os.path.join(
-    configuration_directory, 'cj.ini')
+    configuration_directory, 'cj.json')
 full_log_path = os.path.join(
     response_directory, "conversation_log.md")
 model_options = (

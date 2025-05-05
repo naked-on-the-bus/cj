@@ -49,7 +49,7 @@ You can install the requirements using `apt`:
 
 ```bash
 sudo apt update
-sudo apt install python3 python3-pip git glow
+sudo apt install python3 python3-pip python3.12-venv git glow 
 ```
 
 **For Arch Linux:**
