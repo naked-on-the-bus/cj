@@ -43,13 +43,17 @@ To set up the project, you will need the following installed on your system:
 
 Here are the commands to install these requirements on common Linux distributions:
 
-**For Debian-based distributions (like Ubuntu, Mint, Debian):**
+**Debian/Ubuntu:**
 
 You can install the requirements using `apt`:
 
 ```bash
 sudo apt update
-sudo apt install python3 python3-pip python3.12-venv git glow 
+sudo apt install python3 python3-pip python3.12-venv git
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+sudo apt update && sudo apt install glow
 ```
 
 **For Arch Linux:**
@@ -74,6 +78,7 @@ If `glow` is not available in your distribution's repositories, you can download
 
 2.  **Run the installer script:**
     ```bash
+    chmod +x install.sh
     ./install.sh
     ```
 
@@ -104,11 +109,10 @@ The first time you run `cj` after installation, it will guide you through settin
     ```bash
     cj
     ```
-2.  Use the menu to select 'set google api key' and enter your API key obtained from [Google AI Studio](https://aistudio.google.com/app/apikey).
-3.  Use the menu to select 'set ai model' and choose one of the available Gemini models.
-4.  Select 'start conversation' to begin chatting.
 
-Your settings will be saved in `~/.config/cj/cj.ini`.
+2.  Select 'start conversation' to begin chatting.
+
+Your settings will be saved in `~/.config/cj/cj.json`.
 
 ## Uninstallation
 

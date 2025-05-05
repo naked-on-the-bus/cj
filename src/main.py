@@ -43,9 +43,9 @@ print(ascii_art)
 # --- Configuration ---
 api_key  = ""
 ai_model = ""
-home_directory          = os.path.expanduser('~')
-response_directory      = os.path.join(
-    home_directory, '.config', 'tmp')
+home_directory = os.path.expanduser('~')
+response_directory = os.path.join(
+    home_directory, '.config', 'cj', "tmp")
 configuration_directory = os.path.join(
     home_directory, '.config', 'cj')
 configuration_file      = os.path.join(
