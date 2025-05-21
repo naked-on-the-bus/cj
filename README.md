@@ -21,7 +21,7 @@
 
 This is interactive command-line interface (CLI) tool to chat with Google's Generative AI models (like Gemini) directly from your Linux terminal.
 
-It maintains a conversation history within a session and logs the entire chat to a Markdown file. Responses are displayed using `glow` if available, otherwise printed directly, which sucks, so install glow :)
+It maintains a conversation history within a session and logs the entire chat to a Markdown file. Responses are displayed using `glow` if available.
 
 ## Features
 
@@ -50,6 +50,7 @@ You can install the requirements using `apt`:
 ```bash
 sudo apt update
 sudo apt install python3 python3-pip python3.12-venv git
+// add the charm repo
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
